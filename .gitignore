@@ -129,29 +129,8 @@ dmypy.json
 .pyre/
 
 # Leo
-cifar10_slurm_tutorial/data/
-tent/02_data/
-tent/99_slurm/
-tent/05_ckpt/
-tent/98_bin/
-tent/04_output/default/
-tent/04_output/output_collapse/
-tent/04_output/output_vanilla/
-tent/04_output/output_leo/bin
-tent/06_new_c_datasets
-tent/svhn_data
-tent/results.csv
-tta_ood/02_data/
+
 tta_ood/99_slurm/
 tta_ood/05_ckpt/
 tta_ood/98_bin/
-tta_ood/04_output/default/
-tta_ood/04_output/output_collapse/
-tta_ood/04_output/output_vanilla/
-tta_ood/04_output/output_leo/bin
-tta_ood/06_new_c_datasets
-tta_ood/svhn_data
-tta_ood/results.csv
 tta_ood/97_embeddings/
-
-tta_ood/slurm_wo_run.sh
