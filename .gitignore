@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # Leo
-
+tta_ood/02_data/
 tta_ood/99_slurm/
 tta_ood/05_ckpt/
 tta_ood/98_bin/
