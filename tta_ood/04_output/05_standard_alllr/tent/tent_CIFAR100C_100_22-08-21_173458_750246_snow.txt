@@ -1,0 +1,225 @@
+[22/08/21 17:34:58] [conf.py:  244]: PyTorch Version: torch=1.8.1+cu102, cuda=10.2, cudnn=7605
+[22/08/21 17:34:58] [conf.py:  246]: BN:
+  EPS: 1e-05
+  MOM: 0.1
+CKPT_DIR: 05_ckpt
+CORRUPTION:
+  CIFAR100C_samples: 100
+  CIFAR100_samples: 0
+  DATASET: cifar10
+  NUM_EX: 10000
+  SEVERITY: [1, 2, 3, 4, 5]
+  SVHNC_samples: 0
+  SVHN_samples: 0
+  TYPE: ['snow']
+CUDNN:
+  BENCHMARK: True
+DATA_DIR: 02_data
+DESC: 
+LOG_DEST: tent_CIFAR100C_100_22-08-21_173458_750246_snow.txt
+LOG_TIME: 22-08-21_173458_750246
+MODEL:
+  ADAPTATION: tent
+  ARCH: Standard
+  CREATE_EMBEDDINGS: False
+  EPISODIC: False
+  OOD_METHOD: none
+  OOD_THRESHOLD: 0.0
+  PL_THRESHOLD: 0.0
+N_EPOCHS: 3
+OPTIM:
+  BETA: 0.9
+  DAMPENING: 0.0
+  LR: 0.0003
+  METHOD: Adam
+  MOMENTUM: 0.9
+  NESTEROV: True
+  STEPS: 1
+  WD: 0.0
+RNG_SEED: 1
+SAVE_DIR: 04_output/output_leo
+TEST:
+  BATCH_SIZE: 200
+[22/08/21 17:35:08] [cifar10c.py:  147]: LOADING_TIME: loading cfg and model took 10.1501s
+[22/08/21 17:35:08] [cifar10c.py:  161]: test-time adaptation: TENT
+[22/08/21 17:35:08] [cifar10c.py:  282]: model for adaptation: WideResNet(
+  (conv1): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (block1): NetworkBlock(
+    (layer): Sequential(
+      (0): BasicBlock(
+        (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(16, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (convShortcut): Conv2d(16, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      )
+      (1): BasicBlock(
+        (bn1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (2): BasicBlock(
+        (bn1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (3): BasicBlock(
+        (bn1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+    )
+  )
+  (block2): NetworkBlock(
+    (layer): Sequential(
+      (0): BasicBlock(
+        (bn1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(160, 320, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (convShortcut): Conv2d(160, 320, kernel_size=(1, 1), stride=(2, 2), bias=False)
+      )
+      (1): BasicBlock(
+        (bn1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (2): BasicBlock(
+        (bn1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (3): BasicBlock(
+        (bn1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+    )
+  )
+  (block3): NetworkBlock(
+    (layer): Sequential(
+      (0): BasicBlock(
+        (bn1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(320, 640, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (convShortcut): Conv2d(320, 640, kernel_size=(1, 1), stride=(2, 2), bias=False)
+      )
+      (1): BasicBlock(
+        (bn1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (2): BasicBlock(
+        (bn1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (3): BasicBlock(
+        (bn1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+    )
+  )
+  (bn1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+  (relu): ReLU(inplace=True)
+  (fc): Linear(in_features=640, out_features=10, bias=True)
+)
+[22/08/21 17:35:08] [cifar10c.py:  283]: params for adaptation: ['block1.layer.0.bn1.weight', 'block1.layer.0.bn1.bias', 'block1.layer.0.bn2.weight', 'block1.layer.0.bn2.bias', 'block1.layer.1.bn1.weight', 'block1.layer.1.bn1.bias', 'block1.layer.1.bn2.weight', 'block1.layer.1.bn2.bias', 'block1.layer.2.bn1.weight', 'block1.layer.2.bn1.bias', 'block1.layer.2.bn2.weight', 'block1.layer.2.bn2.bias', 'block1.layer.3.bn1.weight', 'block1.layer.3.bn1.bias', 'block1.layer.3.bn2.weight', 'block1.layer.3.bn2.bias', 'block2.layer.0.bn1.weight', 'block2.layer.0.bn1.bias', 'block2.layer.0.bn2.weight', 'block2.layer.0.bn2.bias', 'block2.layer.1.bn1.weight', 'block2.layer.1.bn1.bias', 'block2.layer.1.bn2.weight', 'block2.layer.1.bn2.bias', 'block2.layer.2.bn1.weight', 'block2.layer.2.bn1.bias', 'block2.layer.2.bn2.weight', 'block2.layer.2.bn2.bias', 'block2.layer.3.bn1.weight', 'block2.layer.3.bn1.bias', 'block2.layer.3.bn2.weight', 'block2.layer.3.bn2.bias', 'block3.layer.0.bn1.weight', 'block3.layer.0.bn1.bias', 'block3.layer.0.bn2.weight', 'block3.layer.0.bn2.bias', 'block3.layer.1.bn1.weight', 'block3.layer.1.bn1.bias', 'block3.layer.1.bn2.weight', 'block3.layer.1.bn2.bias', 'block3.layer.2.bn1.weight', 'block3.layer.2.bn1.bias', 'block3.layer.2.bn2.weight', 'block3.layer.2.bn2.bias', 'block3.layer.3.bn1.weight', 'block3.layer.3.bn1.bias', 'block3.layer.3.bn2.weight', 'block3.layer.3.bn2.bias', 'bn1.weight', 'bn1.bias']
+[22/08/21 17:35:08] [cifar10c.py:  284]: optimizer for adaptation: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.0003
+    weight_decay: 0.0
+)
+[22/08/21 17:35:08] [cifar10c.py:  184]: resetting model
+[22/08/21 17:35:08] [cifar10c.py:  189]: RESET_TIME: resetting model took 0.0033s
+[22/08/21 17:35:09] [cifar10c.py:  229]: OOD_TIME: loading ood data took 1.0137s
+[22/08/21 17:37:54] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.4069s
+[22/08/21 17:37:54] [cifar10c.py:  242]: epoch 1 error % [snow1]: 8.95%
+[22/08/21 17:37:55] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.7923s
+[22/08/21 17:40:39] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 163.8206s
+[22/08/21 17:40:39] [cifar10c.py:  242]: epoch 2 error % [snow1]: 8.75%
+[22/08/21 17:40:39] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.5804s
+[22/08/21 17:43:23] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 163.7935s
+[22/08/21 17:43:23] [cifar10c.py:  242]: epoch 3 error % [snow1]: 8.89%
+[22/08/21 17:43:23] [cifar10c.py:  184]: resetting model
+[22/08/21 17:43:23] [cifar10c.py:  189]: RESET_TIME: resetting model took 0.0041s
+[22/08/21 17:43:24] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.7446s
+[22/08/21 17:46:08] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 163.8634s
+[22/08/21 17:46:08] [cifar10c.py:  242]: epoch 1 error % [snow2]: 13.60%
+[22/08/21 17:46:09] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.693s
+[22/08/21 17:48:52] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 163.8505s
+[22/08/21 17:48:52] [cifar10c.py:  242]: epoch 2 error % [snow2]: 13.18%
+[22/08/21 17:48:53] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.8125s
+[22/08/21 17:51:38] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.4247s
+[22/08/21 17:51:38] [cifar10c.py:  242]: epoch 3 error % [snow2]: 13.18%
+[22/08/21 17:51:38] [cifar10c.py:  184]: resetting model
+[22/08/21 17:51:38] [cifar10c.py:  189]: RESET_TIME: resetting model took 0.0041s
+[22/08/21 17:51:38] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.7966s
+[22/08/21 17:54:23] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.06s
+[22/08/21 17:54:23] [cifar10c.py:  242]: epoch 1 error % [snow3]: 13.74%
+[22/08/21 17:54:23] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.7599s
+[22/08/21 17:57:08] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.573s
+[22/08/21 17:57:08] [cifar10c.py:  242]: epoch 2 error % [snow3]: 13.32%
+[22/08/21 17:57:09] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.7675s
+[22/08/21 17:59:53] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.181s
+[22/08/21 17:59:53] [cifar10c.py:  242]: epoch 3 error % [snow3]: 13.29%
+[22/08/21 17:59:53] [cifar10c.py:  184]: resetting model
+[22/08/21 17:59:53] [cifar10c.py:  189]: RESET_TIME: resetting model took 0.004s
+[22/08/21 17:59:54] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.7595s
+[22/08/21 18:02:38] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.518s
+[22/08/21 18:02:38] [cifar10c.py:  242]: epoch 1 error % [snow4]: 15.92%
+[22/08/21 18:02:39] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.7866s
+[22/08/21 18:05:24] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.6765s
+[22/08/21 18:05:24] [cifar10c.py:  242]: epoch 2 error % [snow4]: 15.72%
+[22/08/21 18:05:24] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.8023s
+[22/08/21 18:08:09] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.7786s
+[22/08/21 18:08:09] [cifar10c.py:  242]: epoch 3 error % [snow4]: 15.58%
+[22/08/21 18:08:09] [cifar10c.py:  184]: resetting model
+[22/08/21 18:08:09] [cifar10c.py:  189]: RESET_TIME: resetting model took 0.004s
+[22/08/21 18:08:10] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.7924s
+[22/08/21 18:10:55] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.8314s
+[22/08/21 18:10:55] [cifar10c.py:  242]: epoch 1 error % [snow5]: 16.53%
+[22/08/21 18:10:55] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.7108s
+[22/08/21 18:13:39] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 163.9561s
+[22/08/21 18:13:39] [cifar10c.py:  242]: epoch 2 error % [snow5]: 16.18%
+[22/08/21 18:13:40] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.7955s
+[22/08/21 18:16:25] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.5221s
+[22/08/21 18:16:25] [cifar10c.py:  242]: epoch 3 error % [snow5]: 16.11%

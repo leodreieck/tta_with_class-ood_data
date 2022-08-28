@@ -1,0 +1,1505 @@
+[22/08/22 14:53:00] [conf.py:  244]: PyTorch Version: torch=1.8.1+cu102, cuda=10.2, cudnn=7605
+[22/08/22 14:53:00] [conf.py:  246]: BN:
+  EPS: 1e-05
+  MOM: 0.1
+CKPT_DIR: 05_ckpt
+CORRUPTION:
+  CIFAR100C_samples: 100
+  CIFAR100_samples: 0
+  DATASET: cifar10
+  NUM_EX: 10000
+  SEVERITY: [1, 2, 3, 4, 5]
+  SVHNC_samples: 0
+  SVHN_samples: 0
+  TYPE: ['motion_blur']
+CUDNN:
+  BENCHMARK: True
+DATA_DIR: 02_data
+DESC: 
+LOG_DEST: tent_CIFAR100C_100_22-08-22_145300_776123_moti.txt
+LOG_TIME: 22-08-22_145300_776123
+MODEL:
+  ADAPTATION: tent
+  ARCH: Standard
+  CREATE_EMBEDDINGS: False
+  EPISODIC: False
+  OOD_METHOD: threshold_n_images
+  OOD_THRESHOLD: 0.667
+  PL_THRESHOLD: 0.0
+N_EPOCHS: 5
+OPTIM:
+  BETA: 0.9
+  DAMPENING: 0.0
+  LR: 0.0003
+  METHOD: Adam
+  MOMENTUM: 0.9
+  NESTEROV: True
+  STEPS: 1
+  WD: 0.0
+RNG_SEED: 1
+SAVE_DIR: 04_output/output_leo
+TEST:
+  BATCH_SIZE: 200
+[22/08/22 14:53:11] [cifar10c.py:  147]: LOADING_TIME: loading cfg and model took 10.3362s
+[22/08/22 14:53:11] [cifar10c.py:  161]: test-time adaptation: TENT
+[22/08/22 14:53:11] [cifar10c.py:  282]: model for adaptation: WideResNet(
+  (conv1): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (block1): NetworkBlock(
+    (layer): Sequential(
+      (0): BasicBlock(
+        (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(16, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (convShortcut): Conv2d(16, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      )
+      (1): BasicBlock(
+        (bn1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (2): BasicBlock(
+        (bn1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (3): BasicBlock(
+        (bn1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+    )
+  )
+  (block2): NetworkBlock(
+    (layer): Sequential(
+      (0): BasicBlock(
+        (bn1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(160, 320, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (convShortcut): Conv2d(160, 320, kernel_size=(1, 1), stride=(2, 2), bias=False)
+      )
+      (1): BasicBlock(
+        (bn1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (2): BasicBlock(
+        (bn1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (3): BasicBlock(
+        (bn1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+    )
+  )
+  (block3): NetworkBlock(
+    (layer): Sequential(
+      (0): BasicBlock(
+        (bn1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(320, 640, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (convShortcut): Conv2d(320, 640, kernel_size=(1, 1), stride=(2, 2), bias=False)
+      )
+      (1): BasicBlock(
+        (bn1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (2): BasicBlock(
+        (bn1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (3): BasicBlock(
+        (bn1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+    )
+  )
+  (bn1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+  (relu): ReLU(inplace=True)
+  (fc): Linear(in_features=640, out_features=10, bias=True)
+)
+[22/08/22 14:53:11] [cifar10c.py:  283]: params for adaptation: ['block1.layer.0.bn1.weight', 'block1.layer.0.bn1.bias', 'block1.layer.0.bn2.weight', 'block1.layer.0.bn2.bias', 'block1.layer.1.bn1.weight', 'block1.layer.1.bn1.bias', 'block1.layer.1.bn2.weight', 'block1.layer.1.bn2.bias', 'block1.layer.2.bn1.weight', 'block1.layer.2.bn1.bias', 'block1.layer.2.bn2.weight', 'block1.layer.2.bn2.bias', 'block1.layer.3.bn1.weight', 'block1.layer.3.bn1.bias', 'block1.layer.3.bn2.weight', 'block1.layer.3.bn2.bias', 'block2.layer.0.bn1.weight', 'block2.layer.0.bn1.bias', 'block2.layer.0.bn2.weight', 'block2.layer.0.bn2.bias', 'block2.layer.1.bn1.weight', 'block2.layer.1.bn1.bias', 'block2.layer.1.bn2.weight', 'block2.layer.1.bn2.bias', 'block2.layer.2.bn1.weight', 'block2.layer.2.bn1.bias', 'block2.layer.2.bn2.weight', 'block2.layer.2.bn2.bias', 'block2.layer.3.bn1.weight', 'block2.layer.3.bn1.bias', 'block2.layer.3.bn2.weight', 'block2.layer.3.bn2.bias', 'block3.layer.0.bn1.weight', 'block3.layer.0.bn1.bias', 'block3.layer.0.bn2.weight', 'block3.layer.0.bn2.bias', 'block3.layer.1.bn1.weight', 'block3.layer.1.bn1.bias', 'block3.layer.1.bn2.weight', 'block3.layer.1.bn2.bias', 'block3.layer.2.bn1.weight', 'block3.layer.2.bn1.bias', 'block3.layer.2.bn2.weight', 'block3.layer.2.bn2.bias', 'block3.layer.3.bn1.weight', 'block3.layer.3.bn1.bias', 'block3.layer.3.bn2.weight', 'block3.layer.3.bn2.bias', 'bn1.weight', 'bn1.bias']
+[22/08/22 14:53:11] [cifar10c.py:  284]: optimizer for adaptation: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.0003
+    weight_decay: 0.0
+)
+[22/08/22 14:53:11] [cifar10c.py:  184]: resetting model
+[22/08/22 14:53:11] [cifar10c.py:  189]: RESET_TIME: resetting model took 0.0032s
+[22/08/22 14:53:11] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.7777s
+[22/08/22 14:53:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 14:53:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:53:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:53:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.0%,74.0%] of the data
+[22/08/22 14:53:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:53:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:53:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:53:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 14:53:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 14:53:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:53:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:53:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 14:53:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 14:53:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:53:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 14:53:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:53:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 14:53:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 14:53:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:53:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 14:53:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 14:54:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:54:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 14:54:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 14:54:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 14:54:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:54:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:54:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:54:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 14:54:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:54:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:54:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 14:54:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 14:54:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:54:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:54:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 14:54:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 14:54:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:54:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 14:54:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 14:54:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 14:54:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.0%,74.0%] of the data
+[22/08/22 14:54:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:54:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 14:54:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 14:54:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 14:54:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:55:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:55:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:55:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:55:57] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 165.7348s
+[22/08/22 14:55:57] [cifar10c.py:  242]: epoch 1 error % [motion_blur1]: 7.60%
+[22/08/22 14:55:57] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.3248s
+[22/08/22 14:55:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:56:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:56:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.0%,74.0%] of the data
+[22/08/22 14:56:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 14:56:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:56:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 14:56:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:56:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 14:56:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 14:56:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:56:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 14:56:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 14:56:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 14:56:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 14:56:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 14:56:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 14:56:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 14:56:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 14:56:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 14:56:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:56:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 14:56:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 14:56:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:56:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 14:56:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:56:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 14:56:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 14:57:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:57:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:57:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:57:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 14:57:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:57:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:57:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 14:57:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:57:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 14:57:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:57:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 14:57:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:57:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:57:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:57:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 14:57:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:57:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 14:57:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 14:57:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:57:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 14:57:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 14:57:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:57:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 14:58:42] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.9617s
+[22/08/22 14:58:42] [cifar10c.py:  242]: epoch 2 error % [motion_blur1]: 7.40%
+[22/08/22 14:58:43] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.3263s
+[22/08/22 14:58:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 14:58:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 14:58:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 14:58:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:58:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:58:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 14:58:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:59:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 14:59:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:59:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:59:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 14:59:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 14:59:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:59:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 14:59:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:59:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:59:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 14:59:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 14:59:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 14:59:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 14:59:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:59:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 14:59:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 14:59:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 14:59:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 14:59:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 14:59:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 14:59:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:59:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 14:59:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 14:59:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 14:59:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 14:59:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:00:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:00:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:00:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:00:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:00:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:00:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:00:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:00:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:00:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:00:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:00:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:00:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:00:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 15:00:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:00:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:00:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:00:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:01:28] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 165.0269s
+[22/08/22 15:01:28] [cifar10c.py:  242]: epoch 3 error % [motion_blur1]: 7.44%
+[22/08/22 15:01:28] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2934s
+[22/08/22 15:01:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:01:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 15:01:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:01:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:01:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:01:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:01:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:01:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:01:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:01:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:01:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:01:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:01:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:01:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:02:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:02:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:02:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 15:02:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:02:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:02:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:02:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:02:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:02:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:02:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:02:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:02:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,12.0%,76.0%] of the data
+[22/08/22 15:02:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:02:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:02:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:02:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:02:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:02:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:02:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:02:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:02:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:02:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:02:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:02:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:02:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:02:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:03:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:03:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:03:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:03:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:03:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:03:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:03:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:03:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.0%,74.0%] of the data
+[22/08/22 15:03:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:03:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:04:14] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 165.6066s
+[22/08/22 15:04:14] [cifar10c.py:  242]: epoch 4 error % [motion_blur1]: 7.50%
+[22/08/22 15:04:14] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.3001s
+[22/08/22 15:04:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:04:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:04:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:04:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:04:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:04:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:04:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:04:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:04:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:04:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,12.5%,75.0%] of the data
+[22/08/22 15:04:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:04:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.0%,74.0%] of the data
+[22/08/22 15:04:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:04:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:04:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:04:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:04:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:04:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:04:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:04:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:05:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:05:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:05:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:05:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:05:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:05:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:05:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:05:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:05:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:05:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:05:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:05:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:05:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:05:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:05:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:05:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:05:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.0%,74.0%] of the data
+[22/08/22 15:05:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 15:05:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:05:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:05:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:05:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 15:05:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:05:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:05:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:05:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:06:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:06:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:06:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:06:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:07:00] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 165.7226s
+[22/08/22 15:07:00] [cifar10c.py:  242]: epoch 5 error % [motion_blur1]: 7.38%
+[22/08/22 15:07:00] [cifar10c.py:  184]: resetting model
+[22/08/22 15:07:00] [cifar10c.py:  189]: RESET_TIME: resetting model took 0.0037s
+[22/08/22 15:07:00] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2987s
+[22/08/22 15:07:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:07:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:07:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:07:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:07:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:07:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:07:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:07:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:07:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:07:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:07:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:07:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:07:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:07:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:07:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:07:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:07:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:07:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:07:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:07:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:07:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:07:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:07:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:07:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:07:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:07:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:08:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:08:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:08:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:08:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:08:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:08:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:08:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:08:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:08:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:08:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:08:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:08:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:08:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:08:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:08:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:08:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:08:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:08:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:08:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:08:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:08:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:08:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:08:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.0%,74.0%] of the data
+[22/08/22 15:08:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:09:45] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 165.1717s
+[22/08/22 15:09:45] [cifar10c.py:  242]: epoch 1 error % [motion_blur2]: 9.15%
+[22/08/22 15:09:45] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2928s
+[22/08/22 15:09:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:09:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:09:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:09:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:09:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:09:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:10:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:10:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:10:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:10:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:10:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:10:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:10:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:10:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:10:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:10:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:10:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:10:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:10:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:10:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.0%,74.0%] of the data
+[22/08/22 15:10:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:10:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:10:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:10:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:10:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:10:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:10:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:10:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 15:10:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:10:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:10:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:10:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:11:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:11:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:11:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:11:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:11:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:11:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:11:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:11:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:11:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:11:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:11:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:11:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:11:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:11:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:11:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:11:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:11:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:11:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:12:31] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 165.1815s
+[22/08/22 15:12:31] [cifar10c.py:  242]: epoch 2 error % [motion_blur2]: 9.17%
+[22/08/22 15:12:31] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2936s
+[22/08/22 15:12:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:12:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:12:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:12:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:12:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:12:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:12:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:12:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:12:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:12:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:12:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:12:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:13:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:13:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,12.0%,76.0%] of the data
+[22/08/22 15:13:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:13:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:13:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:13:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:13:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:13:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:13:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:13:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:13:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:13:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:13:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:13:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:13:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 15:13:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:13:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:13:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:13:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:13:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:13:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:13:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:13:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:13:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:13:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:13:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:13:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:14:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:14:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:14:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:14:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:14:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:14:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:14:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:14:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:14:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:14:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:14:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:15:16] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 165.1531s
+[22/08/22 15:15:16] [cifar10c.py:  242]: epoch 3 error % [motion_blur2]: 8.90%
+[22/08/22 15:15:16] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2954s
+[22/08/22 15:15:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:15:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:15:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:15:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:15:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:15:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:15:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:15:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:15:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:15:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:15:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:15:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:15:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:15:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:15:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:15:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:15:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,12.0%,76.0%] of the data
+[22/08/22 15:15:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:15:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:16:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:16:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:16:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:16:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:16:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:16:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:16:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:16:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:16:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:16:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:16:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:16:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:16:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:16:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:16:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:16:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:16:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:16:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:16:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:16:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:16:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:16:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:16:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:16:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:16:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:16:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:17:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:17:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:17:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,12.0%,76.0%] of the data
+[22/08/22 15:17:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:17:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:18:02] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 165.2656s
+[22/08/22 15:18:02] [cifar10c.py:  242]: epoch 4 error % [motion_blur2]: 8.78%
+[22/08/22 15:18:02] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2948s
+[22/08/22 15:18:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:18:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:18:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:18:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:18:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:18:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:18:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:18:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:18:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:18:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:18:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:18:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:18:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:18:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:18:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:18:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:18:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:18:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:18:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:18:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:18:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.0%,74.0%] of the data
+[22/08/22 15:18:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.0%,74.0%] of the data
+[22/08/22 15:18:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:18:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:18:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:19:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:19:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:19:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:19:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:19:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:19:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:19:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:19:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:19:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:19:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:19:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:19:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:19:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:19:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:19:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:19:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:19:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:19:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:19:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:19:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:19:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:19:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:19:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:19:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:19:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:20:47] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.8941s
+[22/08/22 15:20:47] [cifar10c.py:  242]: epoch 5 error % [motion_blur2]: 8.81%
+[22/08/22 15:20:47] [cifar10c.py:  184]: resetting model
+[22/08/22 15:20:47] [cifar10c.py:  189]: RESET_TIME: resetting model took 0.0038s
+[22/08/22 15:20:47] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2925s
+[22/08/22 15:20:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:20:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:20:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:20:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:20:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:21:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:21:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:21:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:21:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:21:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:21:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:21:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:21:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:21:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:21:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:21:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:21:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:21:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:21:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:21:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:21:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:21:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:21:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:21:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.0%,54.0%] of the data
+[22/08/22 15:21:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:21:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:21:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:21:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.0%,54.0%] of the data
+[22/08/22 15:21:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:21:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:21:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:21:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:22:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:22:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:22:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:22:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:22:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:22:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:22:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:22:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:22:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:22:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:22:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:22:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:22:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:22:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:22:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:22:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:22:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:22:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:23:32] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.9801s
+[22/08/22 15:23:32] [cifar10c.py:  242]: epoch 1 error % [motion_blur3]: 10.90%
+[22/08/22 15:23:32] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2995s
+[22/08/22 15:23:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:23:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:23:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:23:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:23:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:23:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:23:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:23:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:23:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:23:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:23:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:23:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:24:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:24:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:24:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:24:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:24:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:24:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:24:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:24:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:24:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:24:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:24:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:24:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:24:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:24:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:24:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:24:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.0%,54.0%] of the data
+[22/08/22 15:24:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:24:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:24:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:24:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:24:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:24:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:24:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:24:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:24:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:24:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:25:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:25:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:25:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:25:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:25:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:25:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:25:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:25:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:25:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:25:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:25:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:25:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:26:17] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.7704s
+[22/08/22 15:26:17] [cifar10c.py:  242]: epoch 2 error % [motion_blur3]: 10.74%
+[22/08/22 15:26:18] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2957s
+[22/08/22 15:26:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:26:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:26:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:26:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:26:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:26:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:26:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:26:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:26:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:26:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:26:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:26:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:26:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:26:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:26:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:26:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,24.0%,52.0%] of the data
+[22/08/22 15:26:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:26:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:27:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:27:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.0%,54.0%] of the data
+[22/08/22 15:27:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:27:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:27:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:27:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:27:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:27:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:27:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:27:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:27:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:27:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:27:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:27:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:27:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:27:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:27:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:27:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:27:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:27:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:27:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:27:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:27:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:27:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:27:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:27:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:28:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:28:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:28:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:28:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:28:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:28:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:29:02] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.876s
+[22/08/22 15:29:02] [cifar10c.py:  242]: epoch 3 error % [motion_blur3]: 10.70%
+[22/08/22 15:29:03] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.3019s
+[22/08/22 15:29:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:29:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:29:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:29:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:29:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:29:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:29:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:29:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:29:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:29:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:29:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:29:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:29:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:29:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:29:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:29:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:29:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:29:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:29:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:29:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:29:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:29:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:29:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,24.0%,52.0%] of the data
+[22/08/22 15:29:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:29:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:30:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:30:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:30:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:30:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:30:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:30:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:30:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:30:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:30:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:30:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:30:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:30:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:30:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:30:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:30:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:30:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:30:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:30:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.5%,73.0%] of the data
+[22/08/22 15:30:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:30:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:30:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:30:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:30:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:30:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:30:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:31:47] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.6882s
+[22/08/22 15:31:47] [cifar10c.py:  242]: epoch 4 error % [motion_blur3]: 10.37%
+[22/08/22 15:31:48] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.3012s
+[22/08/22 15:31:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:31:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:31:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:31:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:31:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:32:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:32:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:32:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:32:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:32:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:32:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:32:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:32:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:32:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:32:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:32:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,25.0%,50.0%] of the data
+[22/08/22 15:32:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:32:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:32:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:32:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:32:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:32:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:32:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:32:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:32:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:32:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:32:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:32:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:32:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:32:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:32:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:33:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:33:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:33:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:33:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:33:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:33:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:33:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:33:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:33:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:33:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,24.5%,51.0%] of the data
+[22/08/22 15:33:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.5%,55.0%] of the data
+[22/08/22 15:33:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:33:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:33:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:33:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:33:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:33:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:33:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:33:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:34:32] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.5429s
+[22/08/22 15:34:32] [cifar10c.py:  242]: epoch 5 error % [motion_blur3]: 10.51%
+[22/08/22 15:34:32] [cifar10c.py:  184]: resetting model
+[22/08/22 15:34:32] [cifar10c.py:  189]: RESET_TIME: resetting model took 0.0037s
+[22/08/22 15:34:33] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.3001s
+[22/08/22 15:34:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:34:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:34:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:34:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:34:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:34:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:34:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:34:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:34:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.0%,54.0%] of the data
+[22/08/22 15:34:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:34:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:34:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:35:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:35:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:35:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:35:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:35:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:35:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:35:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:35:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:35:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:35:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:35:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:35:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:35:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:35:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:35:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:35:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:35:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:35:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:35:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:35:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:35:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:35:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:35:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:35:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:35:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:35:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:36:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:36:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:36:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:36:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:36:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:36:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:36:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:36:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:36:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:36:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:36:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:36:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:37:17] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.8906s
+[22/08/22 15:37:17] [cifar10c.py:  242]: epoch 1 error % [motion_blur4]: 11.03%
+[22/08/22 15:37:18] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2963s
+[22/08/22 15:37:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.5%,55.0%] of the data
+[22/08/22 15:37:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:37:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:37:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:37:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:37:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:37:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:37:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:37:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:37:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:37:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:37:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:37:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:37:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:37:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:37:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:37:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:37:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:38:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:38:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:38:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:38:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:38:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:38:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:38:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:38:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:38:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:38:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:38:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:38:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.5%,55.0%] of the data
+[22/08/22 15:38:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:38:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:38:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:38:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:38:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:38:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:38:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:38:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:38:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:38:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:38:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:38:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:38:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:38:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:39:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:39:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:39:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:39:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:39:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:39:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:40:02] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.5781s
+[22/08/22 15:40:02] [cifar10c.py:  242]: epoch 2 error % [motion_blur4]: 10.63%
+[22/08/22 15:40:03] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2978s
+[22/08/22 15:40:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:40:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:40:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:40:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:40:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:40:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:40:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:40:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:40:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:40:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:40:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:40:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:40:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:40:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.5%,55.0%] of the data
+[22/08/22 15:40:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:40:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:40:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:40:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:40:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:40:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:40:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:40:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:40:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:40:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:40:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:41:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:41:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:41:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:41:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:41:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:41:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:41:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:41:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:41:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:41:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:41:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:41:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:41:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:41:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:41:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:41:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:41:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:41:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:41:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:41:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:41:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:41:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:41:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:41:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:41:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:42:47] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.572s
+[22/08/22 15:42:47] [cifar10c.py:  242]: epoch 3 error % [motion_blur4]: 10.65%
+[22/08/22 15:42:47] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2936s
+[22/08/22 15:42:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:42:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:42:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:42:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:42:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:43:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:43:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:43:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:43:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:43:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:43:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:43:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:43:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:43:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:43:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:43:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:43:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:43:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:43:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:43:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:43:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:43:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:43:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.5%,71.0%] of the data
+[22/08/22 15:43:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:43:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:43:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:43:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:43:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:43:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:43:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:43:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:44:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:44:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:44:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:44:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:44:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:44:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:44:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:44:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:44:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:44:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:44:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:44:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:44:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:44:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:44:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:44:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:44:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:44:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:44:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:45:32] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.7737s
+[22/08/22 15:45:32] [cifar10c.py:  242]: epoch 4 error % [motion_blur4]: 10.40%
+[22/08/22 15:45:34] [cifar10c.py:  229]: OOD_TIME: loading ood data took 1.3628s
+[22/08/22 15:45:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:45:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:45:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:45:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:45:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:45:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:45:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:45:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:45:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:45:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:45:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:46:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:46:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:46:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:46:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:46:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:46:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:46:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:46:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:46:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:46:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:46:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:46:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:46:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:46:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:46:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:46:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:46:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,14.0%,72.0%] of the data
+[22/08/22 15:46:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:46:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:46:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:46:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:46:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:46:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:46:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:46:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:46:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:47:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:47:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:47:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:47:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:47:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:47:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:47:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,13.0%,74.0%] of the data
+[22/08/22 15:47:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:47:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:47:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:47:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:47:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:47:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:48:18] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.7898s
+[22/08/22 15:48:18] [cifar10c.py:  242]: epoch 5 error % [motion_blur4]: 10.48%
+[22/08/22 15:48:18] [cifar10c.py:  184]: resetting model
+[22/08/22 15:48:18] [cifar10c.py:  189]: RESET_TIME: resetting model took 0.0037s
+[22/08/22 15:48:19] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.2947s
+[22/08/22 15:48:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:48:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.5%,55.0%] of the data
+[22/08/22 15:48:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:48:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,24.5%,51.0%] of the data
+[22/08/22 15:48:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:48:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:48:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:48:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:48:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:48:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:48:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:48:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:48:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:48:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:48:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.5%,53.0%] of the data
+[22/08/22 15:48:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:48:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,25.5%,49.0%] of the data
+[22/08/22 15:48:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:49:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:49:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:49:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:49:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:49:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:49:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:49:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:49:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:49:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:49:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,24.0%,52.0%] of the data
+[22/08/22 15:49:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:49:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:49:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:49:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:49:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:49:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:49:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.5%,55.0%] of the data
+[22/08/22 15:49:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:49:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:49:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.5%,53.0%] of the data
+[22/08/22 15:49:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:49:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:49:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:49:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:49:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:49:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:50:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:50:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:50:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:50:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:50:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:50:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.5%,55.0%] of the data
+[22/08/22 15:51:04] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.9376s
+[22/08/22 15:51:04] [cifar10c.py:  242]: epoch 1 error % [motion_blur5]: 13.14%
+[22/08/22 15:51:04] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.3358s
+[22/08/22 15:51:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:51:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:51:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.5%,53.0%] of the data
+[22/08/22 15:51:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:51:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:51:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:51:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:51:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:51:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:51:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:51:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:51:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:51:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:51:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:51:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:51:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:51:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:51:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.0%,54.0%] of the data
+[22/08/22 15:51:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:51:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.5%,55.0%] of the data
+[22/08/22 15:51:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:51:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:51:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.5%,53.0%] of the data
+[22/08/22 15:51:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.0%,54.0%] of the data
+[22/08/22 15:52:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:52:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:52:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:52:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:52:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:52:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.5%,53.0%] of the data
+[22/08/22 15:52:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:52:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:52:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:52:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:52:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:52:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:52:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:52:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:52:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:52:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:52:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:52:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:52:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.5%,69.0%] of the data
+[22/08/22 15:52:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:52:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:52:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:52:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:52:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:52:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:52:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:53:49] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 165.2473s
+[22/08/22 15:53:49] [cifar10c.py:  242]: epoch 2 error % [motion_blur5]: 12.80%
+[22/08/22 15:53:50] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.3089s
+[22/08/22 15:53:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:53:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:53:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:53:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:54:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.5%,55.0%] of the data
+[22/08/22 15:54:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:54:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:54:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:54:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:54:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:54:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:54:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:54:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:54:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:54:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:54:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:54:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:54:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:54:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:54:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,26.0%,48.0%] of the data
+[22/08/22 15:54:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.0%,54.0%] of the data
+[22/08/22 15:54:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:54:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:54:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:54:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:54:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:54:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:54:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:54:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:54:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:55:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:55:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:55:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:55:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:55:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:55:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:55:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:55:16] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:55:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:55:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.0%,54.0%] of the data
+[22/08/22 15:55:23] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:55:25] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:55:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:55:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:55:32] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,15.0%,70.0%] of the data
+[22/08/22 15:55:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:55:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:55:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:55:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:55:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:56:35] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 165.3467s
+[22/08/22 15:56:35] [cifar10c.py:  242]: epoch 3 error % [motion_blur5]: 12.46%
+[22/08/22 15:56:35] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.3001s
+[22/08/22 15:56:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:56:39] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:56:41] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:56:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:56:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:56:48] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:56:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:56:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:56:55] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:56:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:56:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:57:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:57:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.5%,53.0%] of the data
+[22/08/22 15:57:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:57:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:57:11] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:57:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:57:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:57:18] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:57:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.5%,55.0%] of the data
+[22/08/22 15:57:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:57:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:57:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:57:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:57:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:57:34] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:57:36] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,24.5%,51.0%] of the data
+[22/08/22 15:57:38] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:57:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.0%,54.0%] of the data
+[22/08/22 15:57:43] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.5%,55.0%] of the data
+[22/08/22 15:57:45] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:57:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.0%,56.0%] of the data
+[22/08/22 15:57:50] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:57:52] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:57:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:57:57] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:57:59] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 15:58:01] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.5%,67.0%] of the data
+[22/08/22 15:58:04] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.0%,54.0%] of the data
+[22/08/22 15:58:06] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:58:08] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:58:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:58:13] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:58:15] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:58:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:58:20] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,22.5%,55.0%] of the data
+[22/08/22 15:58:22] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 15:58:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:58:27] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 15:58:29] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:59:20] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.9456s
+[22/08/22 15:59:20] [cifar10c.py:  242]: epoch 4 error % [motion_blur5]: 12.31%
+[22/08/22 15:59:20] [cifar10c.py:  229]: OOD_TIME: loading ood data took 0.3066s
+[22/08/22 15:59:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:59:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:59:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:59:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:59:31] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 15:59:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:59:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 15:59:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:59:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 15:59:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 15:59:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:59:47] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:59:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.0%,66.0%] of the data
+[22/08/22 15:59:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 15:59:54] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 15:59:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 15:59:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 16:00:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 16:00:03] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 16:00:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,16.0%,68.0%] of the data
+[22/08/22 16:00:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 16:00:10] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 16:00:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 16:00:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 16:00:17] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 16:00:19] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 16:00:21] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 16:00:24] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 16:00:26] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 16:00:28] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.5%,59.0%] of the data
+[22/08/22 16:00:30] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 16:00:33] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 16:00:35] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 16:00:37] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 16:00:40] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 16:00:42] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,17.5%,65.0%] of the data
+[22/08/22 16:00:44] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,23.0%,54.0%] of the data
+[22/08/22 16:00:46] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 16:00:49] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 16:00:51] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 16:00:53] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 16:00:56] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 16:00:58] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.5%,63.0%] of the data
+[22/08/22 16:01:00] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.5%,61.0%] of the data
+[22/08/22 16:01:02] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.5%,57.0%] of the data
+[22/08/22 16:01:05] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 16:01:07] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,20.0%,60.0%] of the data
+[22/08/22 16:01:09] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,21.0%,58.0%] of the data
+[22/08/22 16:01:12] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,19.0%,62.0%] of the data
+[22/08/22 16:01:14] [ood_detection.py:   28]: N_Images OOD detection filtered out [total,cifar,ood]: [33.3%,18.0%,64.0%] of the data
+[22/08/22 16:02:05] [cifar10c.py:  241]: EPOCH_TIME: running epoch took 164.8253s
+[22/08/22 16:02:05] [cifar10c.py:  242]: epoch 5 error % [motion_blur5]: 12.19%

@@ -1,0 +1,25 @@
+# tent
+numpy>=1.19.5
+torch==1.8.1
+torchvision==0.9.1
+yacs==0.1.8
+iopath==0.1.8
+#git+https://github.com/robustbench/robustbench@v0.1#egg=robustbench
+
+# robustbench
+torchdiffeq
+geotorch
+requests~=2.25.1
+numpy>=1.19.4
+Jinja2~=2.11.2
+tqdm~=4.56.1
+pandas~=1.2.0
+#git+https://github.com/fra31/auto-attack.git@6482e4d6fbeeb51ae9585c41b16d50d14576aadc#egg=autoattack
+
+# hendrycks
+scikit-image
+wand
+opencv-python
+
+# personal
+torchinfo==1.7.0

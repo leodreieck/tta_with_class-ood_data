@@ -1,0 +1,15 @@
+'gaussian_noise' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'impulse_noise' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'shot_noise' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'defocus_blur' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'glass_blur' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'zoom_blur' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'motion_blur' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'snow' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'frost' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'brightness' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'elastic_transform' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'jpeg_compression' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'contrast' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'pixelate' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6
+'fog' 0 200 0 0 0.001 0.0 threshold_n_images 0.5 6

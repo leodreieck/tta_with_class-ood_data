@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: python:3.8
+Stage: spython-base
+
+%files
+requirements_tent_and_rb.txt .
+%post
+
+apt-get update
+apt-get install imagemagick -y
+apt-get install libgl1 -y
+
+
+pip3 install -r requirements_tent_and_rb.txt
+%runscript
+exec /bin/bash "$@"
+%startscript
+exec /bin/bash "$@"
