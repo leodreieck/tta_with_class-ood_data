@@ -1,4 +1,0 @@
-'gaussian_blur'
-'saturate'
-'speckle_noise'
-'spatter'
